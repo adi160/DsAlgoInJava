@@ -128,7 +128,7 @@ public class SinglyLInkedList {
             if(head == null)
                 return false;
             ListNode current = head;
-            while(current !=null){
+            while(current != null){
                 if(current.data == key){
                     return true;
                 }
@@ -189,7 +189,7 @@ public class SinglyLInkedList {
             return mainPtr;
         }
 
-        public void removeDuplicates(){
+        public void removeDuplicatesFromSortedList(){
             if(head == null)
                 return;
 
@@ -290,7 +290,7 @@ public class SinglyLInkedList {
 
 //            Removes duplicates element from sorted link list
 
-//            obj.removeDuplicates();
+//            obj.removeDuplicatesFromSortedList();
 //            obj.display(obj.head);
 
 //            Insert a node in sorted link list
