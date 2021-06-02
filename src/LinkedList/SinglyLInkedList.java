@@ -225,6 +225,60 @@ public class SinglyLInkedList {
             return head;
         }
 
+        public void removeNodeWithGivenKey(int key){
+
+            ListNode current = head;
+            ListNode previous = null;
+
+            if(current != null && current.data == key){
+                head = current.next;
+                return;
+            }
+
+            while(current != null && current.data != key) {
+                previous = current;
+                current = current.next;
+            }
+
+            if(current == null){
+                return;
+            }
+
+            previous.next = current.next;
+        }
+
+        public boolean isContainsLoop(){
+            ListNode slowPtr = head;
+            ListNode fastPtr = head;
+
+            while(fastPtr != null && fastPtr.next != null){
+                slowPtr = slowPtr.next;
+                fastPtr = fastPtr.next.next;
+
+                if(slowPtr == fastPtr){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void createLoopInLinkedList(){
+            ListNode first = new ListNode(1);
+            ListNode second = new ListNode(1);
+            ListNode third = new ListNode(1);
+            ListNode fourth = new ListNode(1);
+            ListNode fifth = new ListNode(1);
+            ListNode sixth = new ListNode(1);
+
+            head = first;
+            first.next = second;
+            second.next = third;
+            third.next = fourth;
+            fourth.next = fifth;
+            fifth.next = sixth;
+            sixth.next = third;
+        }
+
         public static void main(String[] args) {
             SinglyLInkedList obj = new SinglyLInkedList();
 
@@ -240,7 +294,7 @@ public class SinglyLInkedList {
 //            // obj.display(obj.head);
 //            obj.atTheBeginning(1);              // 1 -> 2 -> 3 -> 4 -> 5 -> null
 //            // obj.display(obj.head);
-//            obj.atGivenPosition(1,6);      // 6 -> 1 -> 2 -> 3 -> 4 -> 5 -> null
+//            obj.atGivenPosition(1,6);           // 6 -> 1 -> 2 -> 3 -> 4 -> 5 -> null
 //            obj.display(obj.head);
 
 //            Delete first node of link list
@@ -303,6 +357,17 @@ public class SinglyLInkedList {
 //            obj.display(obj.head);
 //            obj.insertInSortedList(5);
 //            obj.display(obj.head);
+
+//            Delete node with the key value in list
+
+//            obj.removeNodeWithGivenKey(4);
+//            obj.display(obj.head);
+
+//            Create loop in linked list
+
+//            obj.createLoopInLinkedList();
+//            System.out.println(obj.isContainsLoop());
+
         }
 
     }
