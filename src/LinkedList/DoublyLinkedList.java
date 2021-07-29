@@ -15,12 +15,11 @@ public class DoublyLinkedList {
 
     private static class ListNode {
         private int data;
-        private ListNode next;
+        private ListNode next = null;
         private ListNode previous;
 
         public ListNode(int data){
             this.data = data;
-            this.next = null;
             this.previous = null;
         }
     }

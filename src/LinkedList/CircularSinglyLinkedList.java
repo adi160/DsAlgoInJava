@@ -14,11 +14,10 @@ public class CircularSinglyLinkedList {
 
     private static class ListNode{
         private int data;
-        private ListNode next;
+        private ListNode next = null;
 
         public ListNode(int data){
             this.data = data;
-            this.next = null;
         }
     }
 
